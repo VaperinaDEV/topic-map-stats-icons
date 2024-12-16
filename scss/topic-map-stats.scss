@@ -1,0 +1,51 @@
+@import "svg-icons/fontawesome/regular";
+@import "svg-icons/fontawesome/solid";
+
+$svg-prefix: "data:image/svg+xml;utf-8,";
+
+@mixin svg-icon($icon-set, $icon-name, $icon-color, $width, $height) {
+
+  @if $icon-set == "regular" {
+    $svg-url: $svg-prefix + map-get($regular, $icon-name);
+    -webkit-mask-image: url($svg-url);
+  }
+  @if $icon-set == "solid" {
+    $svg-url: $svg-prefix + map-get($solid, $icon-name);
+    -webkit-mask-image: url($svg-url);
+  }
+  
+  width: $width;
+  height: $height;
+  background: $icon-color;
+  -webkit-mask-size: $width $height;
+  -webkit-mask-repeat: no-repeat;
+}
+
+@mixin topic-map-stats-icon {
+  @each $stat, $icon-set, $icon-name, $icon-color in $nested-list {
+    .topic-map__contents {
+      .topic-map__stats {
+        .fk-d-menu__trigger {
+          &.topic-map__#{$stat}-trigger {
+            .number {
+              display: flex;
+              align-items: center;
+              gap: 0.15em;
+              line-height: 1;
+              flex: 1;
+              color: #{$number-color};
+              &:after {
+                content: "";
+                @include svg-icon(#{$icon-set}, #{$icon-name}, #{$icon-color}, 0.85em, 0.85em);
+              }
+
+              ~ .topic-map__stat-label {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

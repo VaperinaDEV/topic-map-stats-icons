@@ -1,0 +1,16 @@
+en:
+  theme_metadata:
+    description: "Add icon after topic nav stats"
+    settings:
+      topic_map_stats: |
+        <strong>Colon delimited in this order:</strong> <br>
+        <code>stat-name:icon-set:icon-name:icon-color</code> <br><br>
+
+        <li><strong>stat-name:</strong> views, likes, links, users <br>
+        <li><strong>icon-set:</strong> regular, solid</li>
+        <li><strong>icon-color:</strong> <code>currentColor</code>, HEX or color variable</li>
+        <br>
+        <strong>For example:</strong> <br>
+        <code>views:solid:eye:currentColor</code> <br>
+        <code>likes:regular:heart:var(--love)</code> <br>
+        <code>users:solid:user:#228C22</code>

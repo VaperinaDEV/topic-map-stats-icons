@@ -1,0 +1,7 @@
+topic_map_stats:
+  default: "views:solid:eye:currentColor|likes:solid:heart:var(--love)|links:solid:link:currentColor|users:solid:user:currentColor"
+  type: "list"
+  list_type: simple
+number_color:
+  default: "var(--primary-high)"
+  type: "string"
